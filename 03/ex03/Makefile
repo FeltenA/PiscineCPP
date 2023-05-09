@@ -1,6 +1,7 @@
 SRCS	=	src/ClapTrap.cpp\
 			src/ScavTrap.cpp\
 			src/FragTrap.cpp\
+			src/DiamondTrap.cpp\
 			main.cpp
 
 INCLUDES=	include
