@@ -3,12 +3,16 @@
 
 #include "Animal.hpp"
 
-class Dog : Animal {
-    Dog(void);
-    Dog(std::string type);
-    ~Dog(void);
+class Dog : public Animal {
+    
+    public:
+        Dog(void);
+        Dog(const Dog& src);
+        ~Dog(void);
 
-    Dog& operator=(const Dog& src);
+        Dog& operator=(const Dog& rhs);
+
+        void makeSound(void) const;
 };
 
 #endif

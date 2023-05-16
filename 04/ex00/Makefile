@@ -1,13 +1,15 @@
-SRCS	=	src/ClapTrap.cpp\
-			src/ScavTrap.cpp\
-			src/FragTrap.cpp\
+SRCS	=	src/Animal.cpp\
+			src/Cat.cpp\
+			src/Dog.cpp\
+			src/WrongAnimal.cpp\
+			src/WrongCat.cpp\
 			main.cpp
 
 INCLUDES=	include
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME	=	claptrap
+NAME	=	animals
 
 CC		=	c++
 
