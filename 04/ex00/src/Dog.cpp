@@ -5,8 +5,8 @@ Dog::Dog(void) : Animal("Dog") {
 
 }
 
-Dog::Dog(const Dog& src) {
-    *this = src;
+Dog::Dog(const Dog& src) : Animal(src) {
+
 }
 
 Dog::~Dog(void) {

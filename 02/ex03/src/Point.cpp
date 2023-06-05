@@ -16,11 +16,11 @@ Point::~Point(void) {
 
 }
 
-Point& Point::operator=(const Point &src) {
+Point& Point::operator=(const Point &rhs) {
     //std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &src) {
-        (Fixed) this->_x = src.getX();
-        (Fixed) this->_y = src.getY();
+    if (this != &rhs) {
+        (Fixed) this->_x = rhs.getX();
+        (Fixed) this->_y = rhs.getY();
     }
     return (*this);
 }

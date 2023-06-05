@@ -18,6 +18,9 @@ int main(void) {
     bob.beRepaired(10);
     dia.attack("test");
     dia.whoAmI();
+    DiamondTrap dia2(dia);
+    dia2.attack("test2");
+    dia2.whoAmI();
 
     return (0);
 }

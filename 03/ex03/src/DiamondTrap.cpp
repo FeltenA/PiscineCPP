@@ -11,8 +11,21 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), _nam
     std::cout << "DiamondTrap " << this->getName() << " constructor called" << std::endl;
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src), FragTrap(src), ScavTrap(src) {
+    std::cout << "DiamondTrap " << this->getName() << " copy constructor called" << std::endl;
+    *this = src;
+}
+
 DiamondTrap::~DiamondTrap(void) {
     std::cout << "DiamondTrap " << this->getName() << " destructor called" << std::endl;
+}
+
+DiamondTrap& DiamondTrap::operator=(const DiamondTrap& rhs) {
+    if (this != &rhs) {
+        ClapTrap::operator=(rhs);
+        this->_name = rhs.getName();
+    }
+    return (*this);
 }
 
 std::string DiamondTrap::getName(void) const {

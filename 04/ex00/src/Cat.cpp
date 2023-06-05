@@ -5,8 +5,8 @@ Cat::Cat(void) : Animal("Cat") {
 
 }
 
-Cat::Cat(const Cat& src) {
-    *this = src;
+Cat::Cat(const Cat& src) : Animal(src) {
+
 }
 
 Cat::~Cat(void) {
