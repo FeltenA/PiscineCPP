@@ -57,7 +57,12 @@ void Character::setInventory(AMateria* inventory[4]) {
             delete this->_inventory[i];
     }
     for (int i = 0; i < 4; i++)
-        this->_inventory[i] = inventory[i];
+    {
+        if (inventory[i])
+            this->_inventory[i] = inventory[i]->clone();
+        else
+            this->_inventory[i] = 0;
+    }
 }
 
 void Character::equip(AMateria* m) {
