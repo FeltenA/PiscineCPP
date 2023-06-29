@@ -2,19 +2,20 @@
 #include <iostream>
 
 Animal::Animal(void) : type("animal") {
-
+    std::cout << "Animal constructor called" << std::endl;
 }
 
 Animal::Animal(std::string type) : type(type) {
-
+    std::cout << "Animal constructor called" << std::endl;
 }
 
 Animal::Animal(const Animal& src) {
+    std::cout << "Animal constructor called" << std::endl;
     *this = src;
 }
 
 Animal::~Animal(void) {
-
+    std::cout << "Animal destructor called" << std::endl;
 }
 
 Animal& Animal::operator=(const Animal& rhs) {

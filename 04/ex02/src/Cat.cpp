@@ -2,15 +2,18 @@
 #include <iostream>
 
 Cat::Cat(void) : Animal("Cat") {
+    std::cout << "Cat constructor called" << std::endl;
     this->_brain = new Brain();
 }
 
 Cat::Cat(const Cat& src) : Animal(src) {
+    std::cout << "Cat constructor called" << std::endl;
     this->_brain = new Brain();
     *(this->_brain) = *src.getBrain();
 }
 
 Cat::~Cat(void) {
+    std::cout << "Cat destructor called" << std::endl;
     if (this->_brain)
         delete this->_brain;
 }

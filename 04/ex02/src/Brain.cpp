@@ -1,17 +1,20 @@
 #include "Brain.hpp"
+#include <iostream>
 
 Brain::Brain(void) {
+    std::cout << "Brain constructor called" << std::endl;
     for (int i = 0; i < 100; i++)
         this->_ideas[i] = "...";
 }
 
 Brain::Brain(const Brain& src) {
+    std::cout << "Brian constructor called" << std::endl;
     for (int i = 0; i < 100; i++)
         this->_ideas[i] = src.getIdea(i);
 }
 
 Brain::~Brain(void) {
-
+    std::cout << "Brain destructor called" << std::endl;
 }
 
 Brain& Brain::operator=(const Brain& rhs) {

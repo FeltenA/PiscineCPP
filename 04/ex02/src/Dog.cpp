@@ -2,15 +2,18 @@
 #include <iostream>
 
 Dog::Dog(void) : Animal("Dog") {
+    std::cout << "Dog constructor called" << std::endl;
     this->_brain = new Brain();
 }
 
 Dog::Dog(const Dog& src) : Animal(src) {
+    std::cout << "Dog constructor called" << std::endl;
     this->_brain = new Brain();
     *(this->_brain) = *src.getBrain();
 }
 
 Dog::~Dog(void) {
+    std::cout << "Dog destructor called" << std::endl;
     if (this->_brain)
         delete this->_brain;
 }

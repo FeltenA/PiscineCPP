@@ -2,19 +2,20 @@
 #include <iostream>
 
 WrongAnimal::WrongAnimal(void) : type("animal") {
-
+    std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type) : type(type) {
-
+    std::cout << "WrongAnimal constructor called" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& src) {
+    std::cout << "WrongAnimal constructor called" << std::endl;
     *this = src;
 }
 
 WrongAnimal::~WrongAnimal(void) {
-
+    std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& rhs) {

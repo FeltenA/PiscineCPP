@@ -2,15 +2,15 @@
 #include <iostream>
 
 Cat::Cat(void) : Animal("Cat") {
-
+    std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::Cat(const Cat& src) : Animal(src) {
-
+    std::cout << "Cat constructor called" << std::endl;
 }
 
 Cat::~Cat(void) {
-
+    std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& rhs) {
