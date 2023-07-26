@@ -1,11 +1,11 @@
-SRCS	=	srcs/Span.cpp\
+SRCS	=	srcs/MutantStack.cpp\
 			main.cpp
 
 INCLUDES=	includes
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME	=	span
+NAME	=	mutantStack
 
 CC		=	c++
 

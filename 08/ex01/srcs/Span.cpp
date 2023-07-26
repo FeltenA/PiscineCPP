@@ -55,8 +55,18 @@ int Span::longestSpan(void) {
 }
 
 int Span::shortestSpan(void) {
+    std::vector<int>::iterator it;
+    int span = -1;
+
     if (this->_list.size() < 2)
         throw std::exception();
     std::vector<int> slist = this->_list;
     std::sort(slist.begin(), slist.end());
+    it = slist.begin();
+    span = *(it + 1) - *it;
+    for (it = slist.begin() + 1; it != slist.end() - 1; it++) {
+        if (*(it + 1) - *it < span)
+            span = *(it + 1) - *it;
+    }
+    return (span);
 }

@@ -1,15 +1,15 @@
-#include "easyfind.hpp"
-#include <string>
+#include "Span.hpp"
+#include <iostream>
 
 int main(void) {
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-
-    std::vector<int>    vect(arr, arr + sizeof(arr) / sizeof(int));
-    std::list<int>  list(arr, arr + sizeof(arr) / sizeof(int));
-
-    std::cout << easyfind(vect, 3) << std::endl;
-    std::cout << easyfind(list, 3) << std::endl;
-    std::cout << easyfind(list, 11) << std::endl;
+    Span sp = Span(5);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
 
     return 0;
 }
