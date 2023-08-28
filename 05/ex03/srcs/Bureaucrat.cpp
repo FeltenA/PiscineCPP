@@ -63,22 +63,22 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs) {
 void Bureaucrat::signForm(AForm& form) {
     try {
         form.beSigned(*this);
-        std::cout << *this << " signed " << form << std::endl;
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }
     catch (AForm::GradeTooLowException& e) {
-        std::cout << *this << " couldn’t sign " << form << " because " << e.what() << "." << std::endl;
+        std::cout << this->getName() << " couldn’t sign " << form.getName() << " because " << e.what() << "." << std::endl;
     }
 }
 
 void Bureaucrat::executeForm(const AForm& form) {
     try {
         form.execute(*this);
-        std::cout << *this << " executed " << form << std::endl;
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
     }
     catch (AForm::GradeTooLowException& e) {
-        std::cout << *this << " couldn’t execute " << form << " because " << e.what() << "." << std::endl;
+        std::cout << this->getName() << " couldn’t execute " << form.getName() << " because " << e.what() << "." << std::endl;
     }
     catch (AForm::NotSignedException& e) {
-        std::cout << *this << " couldn’t execute " << form << " because " << e.what() << "." << std::endl;
+        std::cout << this->getName() << " couldn’t execute " << form.getName() << " because " << e.what() << "." << std::endl;
     }
 }

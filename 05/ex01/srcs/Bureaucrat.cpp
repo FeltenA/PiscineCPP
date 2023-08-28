@@ -62,9 +62,9 @@ std::ostream& operator<<(std::ostream& os, const Bureaucrat& rhs) {
 void Bureaucrat::signForm(Form& form) {
     try {
         form.beSigned(*this);
-        std::cout << *this << " signed " << form << std::endl;
+        std::cout << this->getName() << " signed " << form.getName() << std::endl;
     }
     catch (Form::GradeTooLowException& e) {
-        std::cout << *this << " couldn’t sign " << form << " because " << e.what() << "." << std::endl;
+        std::cout << this->getName() << " couldn’t sign " << form.getName() << " because " << e.what() << "." << std::endl;
     }
 }

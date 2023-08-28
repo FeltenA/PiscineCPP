@@ -30,5 +30,19 @@ int main(void) {
         ++it;
     }
     std::stack<int> s(mstack);
+
+    MutantStack<char> test;
+    test.push('t');
+    test.push('e');
+    test.push('s');
+    test.push('t');
+    MutantStack<char> test2(test);
+    MutantStack<char>::iterator testit = test2.begin();
+    MutantStack<char>::iterator testite = test2.end();
+    while (testit != testite)
+    {
+        std::cout << *testit << std::endl;
+        ++testit;
+    }
     return 0;
 }
