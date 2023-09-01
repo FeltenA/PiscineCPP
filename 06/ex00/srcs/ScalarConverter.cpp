@@ -85,10 +85,10 @@ int isFloat(std::string &literal) {
 }
 
 void ScalarConverter::convert(std::string &literal) {
-    long long int   iVal;
-    char            cVal;
-    double          dVal;
-    float           fVal;
+    long long int   iVal = 0;
+    char            cVal = 0;
+    double          dVal = 0;
+    float           fVal = 0;
 
     if (isChar(literal)) {
         cVal = literal[1];
@@ -107,7 +107,7 @@ void ScalarConverter::convert(std::string &literal) {
         dVal = std::strtod(literal.c_str(), 0);
         fVal = static_cast<float>(dVal);
         if (dVal <= std::numeric_limits<int>::max() && dVal >= std::numeric_limits<int>::min())
-            iVal = static_cast<char>(dVal);
+            iVal = static_cast<int>(dVal);
         if (dVal <= std::numeric_limits<char>::max() && dVal >= std::numeric_limits<char>::min())
             cVal = static_cast<char>(dVal);
     }
@@ -115,7 +115,7 @@ void ScalarConverter::convert(std::string &literal) {
         fVal = std::strtof(literal.c_str(), 0);
         dVal = static_cast<double>(fVal);
         if (fVal <= std::numeric_limits<int>::max() && fVal >= std::numeric_limits<int>::min())
-            iVal = static_cast<char>(fVal);
+            iVal = static_cast<int>(fVal);
         if (fVal <= std::numeric_limits<char>::max() && fVal >= std::numeric_limits<char>::min())
             cVal = static_cast<char>(fVal);
     }
@@ -148,7 +148,7 @@ void ScalarConverter::convert(std::string &literal) {
     else
         std::cout << "float: " << fVal << "f" << std::endl;
     if (dVal == iVal && (literal.size() <= 6 || ((literal[0] == '+' || literal[0] == '-') && literal.size() <= 7)))
-        std::cout << "float: " << dVal << ".0" << std::endl;
+        std::cout << "double: " << dVal << ".0" << std::endl;
     else
         std::cout << "double: " << dVal << std::endl;
 }
