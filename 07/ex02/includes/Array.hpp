@@ -7,7 +7,7 @@ template<typename T>
 class Array {
     public:
         Array(void) : _n(0) {
-            this->_array = new T;
+            this->_array = new T[0];
         }
 
         Array(unsigned int n) : _n(n) {
@@ -23,18 +23,14 @@ class Array {
         }
 
         ~Array(void) {
-            if (!this->_n)
-                delete this->_array;
-            else
+            if (this->_array)
                 delete[] this->_array;
         }
 
         Array& operator=(const Array& rhs) {
             if (this != &rhs) {
                 unsigned int n = rhs.size();
-                if (!this->_n)
-                    delete this->_array;
-                else
+                if (this->_array)
                     delete[] this->_array;
                 this->_array = new T[n];
                 this->_n = n;

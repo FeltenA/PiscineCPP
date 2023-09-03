@@ -25,5 +25,7 @@ int main(void) {
     std::cout << test3[5] << std::endl;
     std::cout << test4[5] << std::endl;
 
+    Array<std::string> test5;
+
     return 0;
 }
