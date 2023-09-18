@@ -1,11 +1,11 @@
-SRCS	=	srcs/BitcoinExchange.cpp\
+SRCS	=	srcs/RPN.cpp\
 			main.cpp
 
 INCLUDES=	includes
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME	=	btc
+NAME	=	RPN
 
 CC		=	c++
 

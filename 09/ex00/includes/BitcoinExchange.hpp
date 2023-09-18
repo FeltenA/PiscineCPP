@@ -12,11 +12,11 @@ class BitcoinExchange {
 
         BitcoinExchange& operator=(BitcoinExchange& rhs);
 
-        std::map<std::string, float>& getPrices(void);
+        std::map<std::string, float>& getPrices(void) const;
         void setPrices(std::map<std::string, float>& prices);
 
         void evaluate(std::string date, float value);
-        void evaluate_file(std::string file_name);
+        void evaluateFile(std::string file_name);
 
     private:
         std::map<std::string, float> _prices;
