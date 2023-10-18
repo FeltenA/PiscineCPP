@@ -12,7 +12,7 @@ class BitcoinExchange {
 
         BitcoinExchange& operator=(BitcoinExchange& rhs);
 
-        std::map<std::string, float>& getPrices(void) const;
+        std::map<std::string, float>& getPrices(void);
         void setPrices(std::map<std::string, float>& prices);
 
         void evaluate(std::string date, float value);
