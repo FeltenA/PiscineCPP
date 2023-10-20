@@ -1,17 +1,17 @@
-SRCS	=	srcs/RPN.cpp\
+SRCS	=	srcs/PmergeMe.cpp\
 			main.cpp
 
 INCLUDES=	includes
 
 OBJS	=	${SRCS:.cpp=.o}
 
-NAME	=	RPN
+NAME	=	PmergeMe
 
 CC		=	c++
 
 RM		=	rm -f
 
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -g
 
 %.o:	%.cpp
 	${CC} ${CFLAGS} -I${INCLUDES} -c $< -o $@

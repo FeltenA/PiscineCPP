@@ -13,8 +13,11 @@ class PmergeMe {
 
         PmergeMe& operator=(PmergeMe& rhs);
 
-        std::vector<int>& getVector(void) const;
-        std::list<int>& getList(void) const;
+        std::vector<int> getVector(void) const;
+        std::list<int> getList(void) const;
+
+        void sortVector(void);
+        void sortList(void);
 
     private:
         std::vector<int> _vect;
