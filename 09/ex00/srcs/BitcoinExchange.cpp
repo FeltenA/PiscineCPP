@@ -84,7 +84,7 @@ BitcoinExchange::BitcoinExchange(std::string file_name) {
     float value;
 
     if (!input_file.is_open())
-        throw std::exception();
+        throw CouldNotOpenFile();
     std::getline(input_file, line);
     while (std::getline(input_file, line)) {
         if (line.find_first_not_of(" \f\n\r\t\v") == std::string::npos)
@@ -158,7 +158,7 @@ void BitcoinExchange::evaluateFile(std::string file_name) {
     float value;
 
     if (!input_file.is_open())
-        throw std::exception();
+        throw CouldNotOpenFile();
     while (std::getline(input_file, line)) {
         if (line.find_first_not_of(" \f\n\r\t\v") == std::string::npos)
             continue;
@@ -177,4 +177,8 @@ void BitcoinExchange::evaluateFile(std::string file_name) {
         value = std::atof(line.c_str());
         this->evaluate(date, value);
     }
+}
+
+const char* BitcoinExchange::CouldNotOpenFile::what() const throw() {
+    return ("Error: could not open file.");
 }

@@ -18,6 +18,11 @@ class BitcoinExchange {
         void evaluate(std::string date, float value);
         void evaluateFile(std::string file_name);
 
+        class CouldNotOpenFile : std::exception {
+            public:
+                virtual const char* what() const throw();
+        };
+
     private:
         std::map<std::string, float> _prices;
 };
